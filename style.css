@@ -107,10 +107,15 @@
     width:100%;
     display: flex;
     margin-bottom:0.5rem;
+
     iframe {
       width: 45%;
       margin:auto;
       height: 26rem;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
     }
   }
 
