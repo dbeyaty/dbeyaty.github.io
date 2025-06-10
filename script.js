@@ -2,7 +2,7 @@ function toggleMenu() {
   document.getElementById('navMenu').classList.toggle('active');
 }
 
-const correctHash = "91447360102d996499a79769219709f571ef98d1dd1aa073a2b83c915c87172b"; // hash of "sajt"
+const correctHash = "91447360102d996499a79769219709f571ef98d1dd1aa073a2b83c915c87172b";
 
 async function hashPassword(pw) {
   const encoder = new TextEncoder();
@@ -18,7 +18,7 @@ async function showSite() {
 }
 
 async function checkLogin() {
-  const storedHash = localStorage.getItem("weddingPasswordHash");
+  const storedHash = localStorage.getItem("pwdHash");
   if (storedHash === correctHash) {
     showSite();
   }
@@ -30,7 +30,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   const hashed = await hashPassword(enteredPw);
   
   if (hashed === correctHash) {
-    localStorage.setItem("weddingPasswordHash", hashed);
+    localStorage.setItem("pwdHash", hashed);
     showSite();
   } else {
     document.getElementById("errorMsg").classList.remove('d-none');
