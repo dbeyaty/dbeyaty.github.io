@@ -28,8 +28,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   e.preventDefault();
   const enteredPw = document.getElementById("passwordInput").value;
   const hashed = await hashPassword(enteredPw);
-
-  console.log(enteredPw, ' ', hashed)
+  
   if (hashed === correctHash) {
     localStorage.setItem("weddingPasswordHash", hashed);
     showSite();
