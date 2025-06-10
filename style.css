@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(240, 240, 239);
+  }
+
+  header {
+    width:100%;
+    background-color: #f6f3ee;
+  }
+
+  .header {
+    --header-height: 60px;
+    --logo-height: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 0;
+    height: var(--header-height);
+
+    .hamburger {
+      display: block;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        --header-height: 75px;
+        --logo-height: 55px;
+
+        .hamburger {
+          border: 0;
+          display:none;
+        }
+    }
+
+    .logo img {
+      height: var(--logo-height);
+      width: auto;
+      margin: auto;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    .active {
+      background-color: #ddd9d4;
+    }
+
+    a, span {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 0.475rem;
+    }
+  }
+
+  nav a:hover {
+      color: #333;
+      background-color: #ddd9d4;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      position: absolute;
+      top: var(--header-height);
+      right: 0;
+      width: 12rem;
+      text-align:center;
+      background-color: #f6f3ee;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    .hamburger {
+      border: 0;
+      display: block;
+    }
+  }
+
+  .stuff {
+    height: 350px;
+    width: 100%;
+    background: url("header.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .map-container {
+    width:100%;
+    display: flex;
+    margin-bottom:0.5rem;
+    iframe {
+      width: 45%;
+      margin:auto;
+      height: 26rem;
+    }
+  }
+
+  .frame-container {
+    overflow-y: auto;
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      overflow: hidden;
+    }
+  }
+
+#loginOverlay {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#f6f3ee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+#loginForm {
+  background:white;
+  padding:2rem;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  text-align:center;
+}
+#passwordInput {
+  padding:0.5rem;
+  margin:1rem 0;
+  width:100%;
+  max-width:250px;
+}
+
+  <div id="loginOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#f6f3ee; display:flex; align-items:center; justify-content:center; z-index:9999;">
+    <form id="loginForm" style="background:white; padding:2rem; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;">
